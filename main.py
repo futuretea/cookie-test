@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     cookies = request.cookies
-    v = cookies.get('JSESSIONID', "")
+    v = cookies.get('JSESSIONID', "helloworld")
     resp = make_response(v)
     resp.set_cookie('JSESSIONID', 'abcdef')
     return resp
