@@ -1,4 +1,5 @@
-all:
+all: docker
+.PHONY: docker run
 docker:
 	docker build -t futuretea/cookie-test .
 run:
