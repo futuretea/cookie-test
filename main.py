@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     resp = make_response("root")
+    resp.set_cookie('jsessionid', 'rooterr', path='/')
     resp.set_cookie('JSESSIONID', 'root', path='/')
     return resp
 
@@ -14,6 +15,7 @@ def index():
 @app.route('/server1')
 def server1():
     resp = make_response("sever1")
+    resp.set_cookie('jsessionid', 'server1err', path='/server1')
     resp.set_cookie('JSESSIONID', 'server1', path='/server1')
     return resp
 
@@ -21,6 +23,7 @@ def server1():
 @app.route('/server2')
 def server2():
     resp = make_response("server2")
+    resp.set_cookie('jsessionid', 'server1err', path='/server2')
     resp.set_cookie('JSESSIONID', 'server2', path='/server2')
     return resp
 
